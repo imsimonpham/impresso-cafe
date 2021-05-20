@@ -56,11 +56,9 @@ const gridLayout = css`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-
-  /* padding: 3rem 1rem; */
+  grid-template-rows: auto;
   column-gap: 1rem;
-  row-gap: 3rem;
+  row-gap: 4rem;
   place-items: center;
   @media screen and (min-width: 1200px) {
     column-gap: 0rem;
@@ -105,7 +103,6 @@ const ImageWrapper = styled.div`
   width: 500px;
   height: 600px;
   order: ${({ reverse }) => (reverse ? "2" : "1")};
-  /* margin-top: ${({ low }) => (low ? "20rem" : "0")}; */
   @media screen and (max-width: 992px) {
     width: 100%;
   }
