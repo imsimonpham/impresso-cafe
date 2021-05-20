@@ -240,7 +240,7 @@ const FoodSection = () => {
         <Intro>
           <Line />
           <TopTitle>
-            <Cutlery /> Hungry? We've got you covered!!
+            <Cutlery /> Hungry? We've got you covered!
           </TopTitle>
           <Line />
         </Intro>

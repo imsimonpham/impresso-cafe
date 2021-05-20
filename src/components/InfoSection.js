@@ -234,7 +234,7 @@ const InfoSection = () => {
         <Intro>
           <Line />
           <TopTitle>
-            <CoffeeCup /> Great Coffee!
+            <CoffeeCup /> Great Coffee
           </TopTitle>
           <Line />
         </Intro>
