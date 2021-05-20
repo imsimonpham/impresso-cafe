@@ -84,7 +84,7 @@ const TextWrapper = styled.div`
   div {
     width: 100%;
     height: 35%;
-    border: 1px solid red;
+
     overflow-y: hidden;
   }
 `;
@@ -94,7 +94,7 @@ const ImgSlider = styled(Slider)`
 
 const SliderWrapper = styled.div`
   width: 100%;
-  border: 1px solid red;
+
   margin-bottom: 2rem;
   @media screen and (max-width: 992px) {
   }
