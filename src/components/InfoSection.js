@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 import { Button } from "./Button";
 import { GiCoffeeCup } from "react-icons/gi";
 import { infoText, infoTextTwo, infoTextSlide } from "../data/InfoData";
@@ -34,12 +34,13 @@ const Intro = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1rem, 3vw, 2rem);
+  /* font-size: clamp(1rem, 3vw, 2rem); */
+  font-size: calc(1rem + 1vw);
 `;
 
 const Line = styled.span`
   height: 1px;
-  width: clamp(40px, 13vw, 200px);
+  width: calc(40px + 5vw);
   background: ${Colors.gold};
 `;
 
@@ -58,6 +59,7 @@ const InfoWrapper = styled.div`
 
   @media screen and (max-width: 992px) {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 `;
 
@@ -69,6 +71,7 @@ const ColumnOne = styled.div`
 `;
 
 const TextWrapper = styled.div`
+  z-index: 2;
   h3 {
     margin-bottom: 1rem;
   }
@@ -84,13 +87,17 @@ const TextWrapper = styled.div`
     border: 1px solid red;
     overflow-y: hidden;
   }
-
-  img {
-    width: 100%;
-  }
 `;
 const ImgSlider = styled(Slider)`
   margin-bottom: 2rem;
+`;
+
+const SliderWrapper = styled.div`
+  width: 100%;
+  border: 1px solid red;
+  margin-bottom: 2rem;
+  @media screen and (max-width: 992px) {
+  }
 `;
 const ColumnTwo = styled.div`
   display: flex;
@@ -106,13 +113,17 @@ const ColumnTwo = styled.div`
   @media screen and (max-width: 992px) {
     img {
       width: 100%;
+      height: 100%;
     }
   }
 `;
-const Image = styled.img`
-  width: clamp(320px, 20vw, 350px);
-  min-width: 100%;
+
+const ImageWrapper = styled.div`
+  width: 100%;
   margin-bottom: 2rem;
+`;
+const Image = styled.img`
+  width: 100%;
 `;
 const ColumnThree = styled.div`
   /* border: 1px solid white; */
@@ -240,14 +251,19 @@ const InfoSection = () => {
         </Intro>
         <InfoWrapper>
           <ColumnOne>
-            <ImgSlider></ImgSlider>
+            <SliderWrapper>
+              <ImgSlider></ImgSlider>
+            </SliderWrapper>
+
             <TextWrapper>
               <h3>{infoTextSlide.title}</h3>
               <p>{infoTextSlide.para}</p>
             </TextWrapper>
           </ColumnOne>
           <ColumnTwo>
-            <Image src={infoText.image} />
+            <ImageWrapper>
+              <Image src={infoText.image} />
+            </ImageWrapper>
             <h3>{infoText.title}</h3>
             <p>{infoText.paraOne}</p>
             <p>{infoText.paraTwo}</p>

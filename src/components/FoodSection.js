@@ -25,11 +25,11 @@ const Intro = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: calc(1rem + 1vw);
 `;
 const Line = styled.span`
   height: 1px;
-  width: clamp(40px, 13vw, 200px);
+  width: calc(40px + 5vw);
   background: #c7a17a;
 `;
 const TopTitle = styled.div`

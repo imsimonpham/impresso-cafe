@@ -1,9 +1,5 @@
 .smallCarousel {
-  width: clamp(320px, 30vw, 401px);
-  height: clamp(320px, 30vw, 401px);
-  overflow-y: hidden;
-  /* border: 1px solid red; */
-  margin-bottom: 2.2rem;
+  border: 1px solid blue;
 }
 
 .smallCarousel img {
@@ -11,8 +7,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  min-width: 100%;
-  margin-bottom: 2rem;
   position: relative;
   z-index: 1;
 }
@@ -50,12 +44,11 @@
   .smallCarousel {
     width: 100%;
     height: 100%;
-    margin-bottom: 1rem;
   }
 
   .smallCarousel img {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
   }
 
   .smallCarousel .carousel-indicators {
@@ -79,10 +72,6 @@
 }
 
 @media screen and (max-width: 420px) {
-  .smallCarousel {
-    height: 40%;
-  }
-
   .smallCarousel img {
     width: 100%;
     min-height: 100% !important;
@@ -91,10 +80,6 @@
 }
 
 @media screen and (max-width: 350px) {
-  .smallCarousel {
-    height: 35%;
-  }
-
   .smallCarousel img {
     width: 100%;
     min-height: 100% !important;
