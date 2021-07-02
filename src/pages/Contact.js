@@ -204,6 +204,7 @@ const Contact = () => {
           console.log(error.text);
         }
       );
+    submissionAlert();
     e.target.reset();
   }
 
