@@ -18,7 +18,6 @@ const Container = styled.div`
 `;
 const Intro = styled.div`
   color: #c7a17a;
-  /* border: 1px solid black; */
   padding: 2rem 0rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -47,7 +46,6 @@ const InfoWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid purple; */
   padding: 0;
 `;
 
@@ -99,7 +97,6 @@ const InfoRowTwo = styled.div`
 
 const ImageWrapper = styled.div`
   grid-area: Image;
-  /* border: 1px solid black; */
   width: 500px;
   height: 600px;
   order: ${({ reverse }) => (reverse ? "2" : "1")};

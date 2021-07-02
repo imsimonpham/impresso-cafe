@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components/macro";
 import JumbotronBg from "../images/bg/bg-lg-8.jpg";
 import { Colors } from "../data/Variables";
-import { Button } from "../components/Button";
+import { ButtonThree } from "../components/Button";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlinePhone } from "react-icons/ai";
 import { BiEnvelope } from "react-icons/bi";
+import emailjs from "emailjs-com";
 
 const Page = styled.div`
   width: 100%;
@@ -102,19 +103,17 @@ const TextAreaContainer = styled.div`
   width: 100%;
   height: 150px;
   textarea {
-        width: 100%;
-        height: 100%;
-        outline: none;
-        border: 1px solid ${Colors.gold};
-        padding: 1rem 1rem;
-        color: ${Colors.brown};
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 1px solid ${Colors.gold};
+    padding: 1rem 1rem;
+    color: ${Colors.brown};
 
-        &::placeholder {
-        color: ${Colors.brown};
-        font-style: italic;
-        }
-        
-  }
+    &::placeholder {
+      color: ${Colors.brown};
+      font-style: italic;
+    }
   }
 `;
 
@@ -162,9 +161,55 @@ const Envelope = styled(BiEnvelope)`
 `;
 const Map = styled.div``;
 
+const Message = styled.div`
+  width: 300px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: ${Colors.gold};
+  color: ${Colors.milk};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  transition: all 1s ease-in-out;
+  opacity: ${({ submitted }) => (submitted ? "1" : "0")};
+`;
+
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(0);
+  const submissionAlert = () => {
+    setSubmitted(1);
+    setTimeout(() => {
+      setSubmitted(0);
+    }, 2000);
+  };
+
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_ujavc5a",
+        "template_83vqcx7",
+        e.target,
+        "user_0wBWq2MZ3ABAr6sJ8SGdI"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
+
   return (
     <Page>
+      <Message submitted={submitted}>Your message has been submitted</Message>
       <Jumbotron>
         <h1>CONTTACT US </h1>
         <h5>Heal the world with Coffee.</h5>
@@ -178,18 +223,31 @@ const Contact = () => {
             within one business day. You can also drop us an email anytime or
             feel free to give us a call, We’d love to hear from you!
           </p>
-          <form action="">
+          <form
+            onSubmit={(e) => {
+              sendEmail(e);
+            }}
+          >
             <FormElementContainer>
-              <input type="text" placeholder="Your Name" />
+              <input name="name" type="text" required placeholder="Your Name" />
             </FormElementContainer>
             <FormElementContainer>
-              <input type="email" placeholder="Your Email" />
+              <input
+                name="email"
+                type="email"
+                required
+                placeholder="Your Email"
+              />
             </FormElementContainer>
             <TextAreaContainer>
-              <textarea placeholder="Your Message or Comments"></textarea>
+              <textarea
+                name="message"
+                placeholder="Your Message or Comments"
+                required
+              ></textarea>
             </TextAreaContainer>
             <FormElementContainer>
-              <Button>SEND</Button>
+              <ButtonThree type="submit">SEND</ButtonThree>
             </FormElementContainer>
           </form>
         </ContactWrapper>
