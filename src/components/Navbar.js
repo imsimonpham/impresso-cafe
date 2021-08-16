@@ -66,19 +66,6 @@ const CoffeeCupIcon = styled(GiCoffeeCup)`
   margin-right: 5px;
 `;
 
-// const NavSubMenuLinks = styled(Link)`
-//   ${NavLinks}
-// `;
-
-// const NavSubMenu = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   position: absolute;
-//   right: 25%;
-//   top: 100px;
-//   border: 1px solid white;
-// `;
-
 const Navbar = ({ toggle }) => {
   const [scroll, setScroll] = useState(false);
 
@@ -117,16 +104,6 @@ const Navbar = ({ toggle }) => {
           );
         })}
       </NavMenu>
-      {/* 
-      <NavSubMenu>
-        {subMenuData.map((item, index) => {
-          return (
-            <NavSubMenuLinks to={item.link} key={index}>
-              {item.title}
-            </NavSubMenuLinks>
-          );
-        })}
-      </NavSubMenu> */}
     </Nav>
   );
 };

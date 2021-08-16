@@ -7,9 +7,4 @@ export const menuData = [
   { title: "Contact Us", link: "/contact" },
 ];
 
-export const subMenuData = [
-  { title: "Hot/Cold Drinks", link: "/menu" },
-  { title: "Food Menu", link: "/menu" },
-];
-
 export const logo = { alt: "logo", image: Logo };
