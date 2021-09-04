@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components/macro";
 import JumbotronBg from "../images/bg/bg-lg-8.jpg";
 import { Colors } from "../data/Variables";
