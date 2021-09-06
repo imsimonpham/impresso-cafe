@@ -90,7 +90,7 @@ function App() {
       <Link
         to=""
         style={ArrowStyle}
-        smooth={true}
+        smooth={false}
         offset={-70}
         duration={1000}
         onClick={scrollToTop}
